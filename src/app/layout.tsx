@@ -15,7 +15,7 @@ const RootLayout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <html className={inter.variable} lang="pt">
+    <html className={inter.variable} lang="pt-br">
       <body className="bg-zinc-950 text-zinc-50 antialiased">{children}</body>
     </html>
   )
