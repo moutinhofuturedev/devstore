@@ -5,3 +5,5 @@ export const GET = () => {
 
   return Response.json(featuredProducts)
 }
+
+// Route Handlers dados de produtos filtrados em destaques
