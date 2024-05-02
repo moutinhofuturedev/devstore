@@ -1,4 +1,5 @@
 import { api } from '@/services/api'
+
 import { Products } from './types'
 
 export const getProductsFeatured = async (): Promise<Products[]> => {

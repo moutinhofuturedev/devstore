@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { getProductsFeatured } from '@/app/utils/get-featured-products'
 import { priceFormatting } from '@/app/utils/price-formatting'
 
