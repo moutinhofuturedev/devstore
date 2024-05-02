@@ -23,7 +23,7 @@ export const Header = () => {
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
           <ShoppingBag className="w-4 h-4" />
-          <span className="text-sm">Cart (0)</span>
+          <span className="text-sm">Carrinho (0)</span>
         </div>
 
         <div className="w-px h-4 bg-zinc-700" />
@@ -32,7 +32,7 @@ export const Header = () => {
           href="/sign-in"
           className="flex items-center gap-2 hover:underline"
         >
-          <span className="text-sm">Account</span>
+          <span className="text-sm">Conta</span>
           <Image
             src="https://github.com/moutinhofuturedev.png"
             className="w-8 h-8 rounded-full"
