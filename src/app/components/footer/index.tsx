@@ -2,15 +2,14 @@ import { env } from '@/env'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '')
   const copyrightName = env.NEXT_PUBLIC_COMPANY_NAME || ''
 
   return (
-    <footer className="text-sm text-zinc-500 dark:text-zinc-400">
+    <footer className="text-sm text-zinc-500 dark:text-zinc-400 h-full mt-auto">
       <div className="border-t border-zinc-700 py-6 text-sm dark:border-zinc-700">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
           <p>
-            &copy; {copyrightDate} {copyrightName}
+            &copy; {currentYear} {copyrightName}
             {copyrightName.length && !copyrightName.endsWith('.')
               ? '.'
               : ''}{' '}
