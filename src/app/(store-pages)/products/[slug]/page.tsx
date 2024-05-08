@@ -1,7 +1,11 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 
+import { AddToCartButton } from '@/app/components/add-to-cart-button'
 import { getSlugProduct } from '@/app/utils/get-slug-product'
 import { PriceFormatting } from '@/app/utils/price-formatting'
+import { Products } from '@/app/utils/types'
+import { api } from '@/services/api'
 
 interface ProductSlug {
   params: {
@@ -9,8 +13,30 @@ interface ProductSlug {
   }
 }
 
-const Products = async ({ params }: ProductSlug) => {
-  const { description, image, price, title, sizes } = await getSlugProduct(
+export const generateMetadata = async ({
+  params,
+}: ProductSlug): Promise<Metadata> => {
+  const { title } = await getSlugProduct(params.slug)
+
+  return {
+    title,
+  }
+}
+
+// Geração estática na build
+export const generateStaticParams = async () => {
+  const response = await api('/products/featured')
+  const products: Products[] = await response.json()
+
+  return products.map((product) => {
+    return {
+      slug: product.slug,
+    }
+  })
+}
+
+const ProductsPage = async ({ params }: ProductSlug) => {
+  const { description, image, price, title, sizes, id } = await getSlugProduct(
     params.slug,
   )
 
@@ -26,7 +52,7 @@ const Products = async ({ params }: ProductSlug) => {
         />
       </div>
 
-      <div className="flex flex-col justify-center px-12">
+      <div className="flex flex-col justify-center px-12 mb-12">
         <h1 className=" text-3xl font-bold leading-tight">{title}</h1>
         <p className="mt-2 leading-relaxed text-zinc-400">{description}</p>
 
@@ -49,7 +75,7 @@ const Products = async ({ params }: ProductSlug) => {
                 <button
                   key={size}
                   type="button"
-                  className="flex items-center justify-center h-9 w-14 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-900 transition-all text-sm font-semibold"
+                  className="flex items-center justify-center h-9 w-14 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-900 text-sm font-semibold focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-zinc-700 cursor-pointer transition-colors"
                 >
                   {size}
                 </button>
@@ -58,12 +84,10 @@ const Products = async ({ params }: ProductSlug) => {
           </div>
         </div>
 
-        <button className="flex justify-center items-center mt-8 h-12 rounded-full bg-emerald-600 font-semibold hover:bg-emerald-500 transition-all">
-          Adicionar ao carrinho
-        </button>
+        <AddToCartButton productId={id} />
       </div>
     </div>
   )
 }
 
-export default Products
+export default ProductsPage
