@@ -5,7 +5,7 @@ import { Products } from './types'
 export const getSlugProduct = async (slug: string): Promise<Products> => {
   const response = await api(`/products/${slug}`, {
     next: {
-      revalidate: 60 * 2, // 2 minutes in cachê
+      revalidate: 3600,
     },
   })
 
