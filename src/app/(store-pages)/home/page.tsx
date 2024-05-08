@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { getProductsFeatured } from '@/app/utils/get-featured-products'
+import { getProductsFeatured } from '@/app/utils/fetch-api/get-featured-products'
 import { PriceFormatting } from '@/app/utils/price-formatting'
 
 export const metadata: Metadata = {

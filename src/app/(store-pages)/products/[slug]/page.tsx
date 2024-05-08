@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 import { AddToCartButton } from '@/app/components/add-to-cart-button'
-import { getSlugProduct } from '@/app/utils/get-slug-product'
+import { getSlugProduct } from '@/app/utils/fetch-api/get-slug-product'
 import { PriceFormatting } from '@/app/utils/price-formatting'
 import { Products } from '@/app/utils/types'
 import { api } from '@/services/api'
