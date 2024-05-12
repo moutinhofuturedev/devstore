@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 import { AddToCartButton } from '@/app/components/add-to-cart-button'
+import { RemoveToCartButton } from '@/app/components/remove-to-cart-buttom'
 import { getSlugProduct } from '@/app/utils/fetch-api/get-slug-product'
 import { PriceFormatting } from '@/app/utils/price-formatting'
 import { Products } from '@/app/utils/types'
@@ -84,7 +85,8 @@ const ProductsPage = async ({ params }: ProductSlug) => {
           </div>
         </div>
 
-        <AddToCartButton productId={id} />
+        <AddToCartButton productId={id} productTitle={title} />
+        <RemoveToCartButton productId={id} productTitle={title} />
       </div>
     </div>
   )
