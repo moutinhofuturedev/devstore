@@ -6,21 +6,25 @@ import { useCart } from '@/contexts/cart-context'
 
 interface AddToCartButtonProps {
   productId: number
+  productTitle: string
 }
 
-export const AddToCartButton = ({ productId }: AddToCartButtonProps) => {
+export const AddToCartButton = ({
+  productId,
+  productTitle,
+}: AddToCartButtonProps) => {
   const { addToCart, items } = useCart()
 
   const handleAddToCart = () => {
     addToCart(productId)
 
-    toast.success('Produto adicionado ao carrinho!', {
-      position: 'bottom-right',
+    toast.success(`${productTitle} adicionado ao carrinho`, {
+      position: 'bottom-center',
       style: {
         padding: '16px',
         gap: '8px',
         borderRadius: '8px',
-        background: '#363636',
+        background: '#8B5CF6',
         color: '#fff',
       },
     })
