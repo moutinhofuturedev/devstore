@@ -25,6 +25,7 @@ const Home = async () => {
           height={920}
           alt={highlightedProduct.description}
           quality={100}
+          priority={false}
         />
 
         <div className="absolute bottom-28 right-28 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">

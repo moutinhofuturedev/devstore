@@ -34,7 +34,7 @@ export const RemoveToCartButton = ({
     <button
       type="button"
       onClick={handleRemoveToCart}
-      className="flex justify-center items-center mt-8 h-12 rounded-full bg-zinc-800 font-semibold hover:bg-zinc-700 transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-emerald-700 disabled:cursor-not-allowed"
+      className="flex justify-center items-center mt-4 h-12 rounded-full bg-zinc-800 font-semibold hover:bg-zinc-700 transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-emerald-700 disabled:cursor-not-allowed"
     >
       Remover do carrinho
     </button>

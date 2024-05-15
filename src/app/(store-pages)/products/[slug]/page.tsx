@@ -50,6 +50,7 @@ const ProductsPage = async ({ params }: ProductSlug) => {
           width={900}
           height={900}
           quality={100}
+          priority={false}
         />
       </div>
 
