@@ -37,7 +37,7 @@ export const generateStaticParams = async () => {
 }
 
 const ProductsPage = async ({ params }: ProductSlug) => {
-  const { description, image, price, title, sizes, id } = await getSlugProduct(
+  const { description, image, price, title, id } = await getSlugProduct(
     params.slug,
   )
 
@@ -72,17 +72,30 @@ const ProductsPage = async ({ params }: ProductSlug) => {
           <span className="block font-semibold">Tamanhos</span>
 
           <div className="flex gap-2">
-            {sizes.map((size) => {
-              return (
-                <button
-                  key={size}
-                  type="button"
-                  className="flex items-center justify-center h-9 w-14 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-900 text-sm font-semibold focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-zinc-700 cursor-pointer transition-colors"
-                >
-                  {size}
-                </button>
-              )
-            })}
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold"
+            >
+              P
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold"
+            >
+              G
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold"
+            >
+              GG
+            </button>
           </div>
         </div>
 

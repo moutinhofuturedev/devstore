@@ -6,5 +6,4 @@ export interface Products {
   image: string
   description: string
   featured: boolean
-  sizes: string[]
 }
