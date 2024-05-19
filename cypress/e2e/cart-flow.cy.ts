@@ -45,9 +45,9 @@ describe('Cart flow', () => {
   it('should be able to search for a product and add it to the cart', () => {
     cy.searchByQuery('moletom')
 
-    cy.get('a[href^="/product"]').first().click()
+    cy.get('a[href^="/products"]').first().click()
 
-    cy.location('pathname').should('include', '/product')
+    cy.location('pathname').should('include', '/products')
 
     cy.contains('Adicionar ao carrinho').click()
 
