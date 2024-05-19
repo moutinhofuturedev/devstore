@@ -9,7 +9,7 @@ export const Header = () => {
     <header className="flex items-center justify-between">
       <div className="flex items-center gap-5">
         <Link href="/home" className="text-2xl font-extrabold text-white">
-          devstore
+          <h1>devstore</h1>
         </Link>
 
         <SearchForm />

@@ -18,7 +18,7 @@ export const AddToCartButton = ({
   const handleAddToCart = () => {
     addToCart(productId)
 
-    toast.success(`${productTitle} adicionado ao carrinho`, {
+    toast.success(`${productTitle} adicionado ao carrinho.`, {
       position: 'bottom-center',
       style: {
         padding: '16px',
@@ -40,6 +40,7 @@ export const AddToCartButton = ({
       className="flex justify-center items-center mt-8 h-12 rounded-full bg-emerald-600 font-semibold hover:bg-emerald-500 transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-emerald-700 disabled:cursor-not-allowed"
       disabled={isDisabled}
       aria-label="Adicionar ao carrinho"
+      data-testid="modal-added"
     >
       Adicionar ao carrinho
     </button>
