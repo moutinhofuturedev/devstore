@@ -12,7 +12,7 @@ const StoreLayout = ({
   return (
     <CartContextProvider>
       <div className="max-auto min-h-screen grid w-full max-w-[1600px] grid-rows-[min-content_max-content] gap-5 p-8">
-        <Suspense>
+        <Suspense fallback={null}>
           <Header />
           {children}
           <Footer />
