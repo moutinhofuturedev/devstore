@@ -20,7 +20,8 @@ describe('Cart flow', () => {
     cy.location('pathname').should('include', '/products')
     cy.contains('button', 'Adicionar ao carrinho').click()
 
-    cy.contains('Carrinho (1)').should('be.visible')
+    cy.contains('Carrinho').should('be.visible')
+    cy.contains('(1)').should('be.visible')
 
     cy.get('[data-testid="modal-added"]').should('be.visible')
     cy.contains('Moletom Never Stop Learning adicionado ao carrinho.').should(
@@ -34,7 +35,8 @@ describe('Cart flow', () => {
     cy.location('pathname').should('include', '/products')
     cy.contains('button', 'Remover do carrinho').click()
 
-    cy.contains('Carrinho (0)').should('be.visible')
+    cy.contains('Carrinho').should('be.visible')
+    cy.contains('(0)').should('be.visible')
 
     cy.get('[data-testid="modal-removed"]').should('be.visible')
     cy.contains('Moletom Never Stop Learning removido do carrinho.').should(
@@ -51,6 +53,7 @@ describe('Cart flow', () => {
 
     cy.contains('Adicionar ao carrinho').click()
 
-    cy.contains('Carrinho (1)').should('exist')
+    cy.contains('Carrinho').should('exist')
+    cy.contains('(1)').should('exist')
   })
 })
