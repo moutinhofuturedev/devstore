@@ -15,7 +15,9 @@ const StoreLayout = ({
         <Suspense fallback={null}>
           <Header />
           {children}
-          <Footer />
+          <div className="mt-auto">
+            <Footer />
+          </div>
         </Suspense>
       </div>
     </CartContextProvider>
