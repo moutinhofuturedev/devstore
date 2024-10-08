@@ -7,25 +7,25 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s | devstore',
-    default: 'devstore',
-  },
+	title: {
+		template: '%s | devstore',
+		default: 'devstore',
+	},
 }
 
 const RootLayout = ({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode
 }>) => {
-  return (
-    <html className={inter.variable} lang="pt-br">
-      <body className="bg-zinc-950 text-zinc-50 antialiased">
-        {children}
-        <Toaster />
-      </body>
-    </html>
-  )
+	return (
+		<html className={inter.variable} lang='pt-BR'>
+			<body className='bg-zinc-950 text-zinc-50 antialiased'>
+				{children}
+				<Toaster />
+			</body>
+		</html>
+	)
 }
 
 export default RootLayout
